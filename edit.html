@@ -11,7 +11,7 @@
       style="width: 800px; height: 600px; border: 1px solid grey;"
     ></div>
     <form action="write.php" method="post">
-      <textarea name="message" id="" cols="100" rows="10"></textarea>
+      <textarea name="message" id="" cols="100" rows="10" style="display:none;"></textarea>
       <input type="submit" value="送信" />
     </form>
 
@@ -31,10 +31,10 @@
           document.getElementById("container"),
           {
             value: [
-              "function x() {",
+              "(function () {",
               '\tconsole.log("Hello world!");',
               '\talert("Hello world!");',
-              "}",
+              "})()",
             ].join("\n"),
             language: "javascript",
           }
@@ -56,8 +56,6 @@
         var textarea = $('textarea[name="message"]');
         textarea.val(editor.getValue());
       });
-
-      console.log($("h2").html()); //debug
     </script>
   </body>
 </html>
